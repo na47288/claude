@@ -2,87 +2,70 @@
 
   <div class="article-header">
     <div class="article-chip"><span class="chip-dot"></span>한경비즈니스 1591호 · 2026년 6월</div>
-    <h1 class="article-title">배트 슈트를 입은 반도체 — 'AI 패권'을 조율하는 K-소부장</h1>
-    <p class="article-sub">패키징공정 — 반도체의 마지막 단계가 AI 시대의 가장 뜨거운 전쟁터로 떠올랐다.</p>
+    <h1 class="article-title">배트 슈트를 입은 반도체 — 'AI 패권'을 조립하는 K-소부장</h1>
+    <p class="article-sub">테스트를 통과한 반도체 칩은 이제 마지막 관문으로 간다. 어떤 '옷'을 입히느냐에 따라 같은 칩도 성능이 완전히 달라진다.</p>
   </div>
 
   <div class="sec">
-    <span class="sec-label">개요</span>
-    <h2 class="sec-title">패키징공정이란?</h2>
-    <p class="sec-body">완성된 반도체 칩을 충격·열·오염으로부터 보호하고, 실제 전자제품에 탑재될 수 있도록 포장하는 최종 단계다. 배트맨이 수트를 입어야 비로소 싸울 수 있듯, 칩도 패키지를 입어야 세상에 나올 수 있다.</p>
-    <div class="hl">
-      <strong>왜 갑자기 패키징이 중요해졌나?</strong><br>
-      과거 패키징은 단순 포장이었다. 그런데 AI 시대가 열리면서 <strong>여러 칩을 하나의 패키지 안에 묶는 '고급 패키징'</strong>이 반도체 성능을 결정하는 핵심 기술이 됐다. 칩을 더 작게 만드는 것만큼, 칩들을 얼마나 효율적으로 연결하느냐가 중요해진 것이다.
-    </div>
+    <span class="sec-label">시작하며</span>
+    <h2 class="sec-title">칩도 옷을 입어야 세상에 나온다</h2>
+    <p class="sec-body">우리가 PC를 조립하거나 스마트폰을 쓸 때 눈으로 직접 만지고 확인하는 '검은색 사각형 모양의 반도체 칩' — 그게 바로 패키징의 결과물이에요.</p>
+    <p class="sec-body" style="margin-top:10px;">과거의 패키징이 칩을 충격으로부터 보호하는 <strong>'철제 상자'</strong>에 그쳤다면, 오늘날 AI와 데이터센터 시대의 패키징은 영웅의 능력을 극대화하는 <strong>'배트 슈트'</strong>로 진화했어요. 똑같은 성능의 반도체라도 어떤 패키징 옷을 입히느냐에 따라 전력 소모, 데이터 처리 속도, 크기가 완전히 달라지기 때문이에요.</p>
   </div>
 
   <div class="sec">
     <span class="sec-label">Part 1</span>
-    <h2 class="sec-title">패키징의 진화 — 단순 포장에서 시스템 통합으로</h2>
-
-    <div class="tbl-wrap">
-      <table class="tbl">
-        <thead><tr><th>세대</th><th>방식</th><th>특징</th></tr></thead>
-        <tbody>
-          <tr><td class="lbl">1세대</td><td class="val">와이어 본딩</td><td class="val">금 실로 칩과 기판 연결. 단순하지만 속도·전력 효율 낮음</td></tr>
-          <tr><td class="lbl">2세대</td><td class="val">플립칩</td><td class="val">칩을 뒤집어 범프(돌기)로 연결. 더 빠르고 소형화 가능</td></tr>
-          <tr><td class="lbl">3세대</td><td class="val">2.5D/3D 패키징</td><td class="val">여러 칩을 하나의 기판 위에 나란히(2.5D) 또는 쌓아서(3D) 통합. HBM이 대표 사례</td></tr>
-          <tr><td class="lbl">4세대(현재)</td><td class="val">칩렛(Chiplet)</td><td class="val">다른 회사·공정의 칩 조각들을 하나로 조합. 엔비디아 B200이 이 방식</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <h2 class="sec-title">먼저 잘라야 한다 — 다이싱(Dicing)</h2>
+    <p class="sec-body">패키징은 동그란 웨이퍼판을 각각의 칩(Die) 단위로 잘게 쪼개어 독립시키는 <strong>'다이싱(Dicing)'</strong> 공정에서 시작해요. 머리카락보다 얇은 칩을 자르는데, 조금이라도 잘못 자르면 수개월의 노력이 도루묵이 돼요. 정밀한 장비 기술이 필수예요.</p>
 
     <div class="card">
-      <div class="card-title">칩렛(Chiplet)이 왜 혁명인가?</div>
-      <div class="card-body">스마트폰을 예로 들면, 과거엔 AP 칩 하나에 모든 기능을 다 넣었다. 칩렛 방식은 CPU 부분, GPU 부분, 메모리 컨트롤러 부분을 따로 만들어서 최종 패키징 단계에서 하나로 조립한다. <strong>각 부분을 가장 잘 만드는 공정에서 만들고, 최종 조합만 패키징에서 하는 것.</strong> 비용·성능·설계 유연성이 모두 올라간다.</div>
+      <div class="card-title">이오테크닉스 — "레이저 칼 하나로 세계 70%를 자른다"</div>
+      <div class="card-body">
+        <p style="margin-bottom:10px;">다이싱 장비 시장은 디스코를 중심으로 한 일본 기업들의 지배력이 유지돼왔어요. 그런데 HBM 및 첨단 패키징 수요 확대에 따라 <strong>레이저 다이싱 기술</strong>이 부상하면서 판도가 바뀌고 있어요.</p>
+        <p>한국의 <strong>이오테크닉스</strong>가 차세대 레이저 다이싱 영역에서 <strong>약 70%의 점유율</strong>로 두각을 드러내며 대표 수혜 기업으로 떠올랐어요.</p>
+      </div>
     </div>
   </div>
 
   <div class="sec">
     <span class="sec-label">Part 2</span>
-    <h2 class="sec-title">주목 기업</h2>
+    <h2 class="sec-title">밀판 위에 올린다 — 기판(PCB/FC-BGA)</h2>
+    <p class="sec-body">안전하게 잘려 나간 개별 칩들은 IT 기기의 메인보드와 전기 신호를 주고받을 수 있도록 <strong>전용 기판(PCB) 위에 얹히는 과정</strong>을 거쳐요. 기판은 칩이 외부 세계와 통신하는 '무대'예요. 이 과정에서 어떤 기술(본딩)로 붙이느냐에 따라 패키징의 갈래가 나뉘어요.</p>
 
     <div class="card">
-      <div class="card-title">한미반도체 — HBM 패키징의 숨은 1등 공신</div>
-      <div class="card-body">HBM을 만들 때 D램 칩들을 정밀하게 쌓고 자르는 <strong>TC본더(Thermal Compression Bonder)</strong> 장비에서 세계 1위다. SK하이닉스 HBM 생산 라인의 핵심 장비를 납품한다. 엔비디아가 SK하이닉스 HBM을 선택한 배경에 한미반도체의 장비 기술이 있다.</div>
-      <div class="card-tag">TC본더 글로벌 시장점유율 1위</div>
+      <div class="card-title">💡 와이어 본딩 vs 플립칩 — 어떻게 다른가요?</div>
+      <div class="card-body">
+        <p style="margin-bottom:10px;"><strong>① 와이어 본딩 방식</strong> — 칩이 하늘을 바라보게 똑바로 얹은 뒤, 금속 와이어로 칩과 기판을 연결하는 전통적인 방식이에요. 실로 다리를 놓는 것처럼요. 비용이 저렴하지만 와이어가 길수록 신호가 느려지는 단점이 있어요.</p>
+        <p><strong>② 플립칩(Flip Chip) 방식</strong> — 반대로 칩을 뒤집어 땅을 바라보게 꽂는 초고속형 방식이에요. 와이어 선 없이 칩의 전극을 기판에 직접 맞닿게 연결하는 일종의 엘리베이터 구조예요. 연결 다리가 없는 대신 기판 바닥에 전기를 통하게 하는 구슬인 <strong>'솔더볼'</strong>을 촘촘히 박아야 해요. 이 구슬을 배열했다고 해 <strong>BGA 기판(FC-BGA)</strong>이라 불러요.</p>
+      </div>
     </div>
 
     <div class="card">
-      <div class="card-title">하나마이크론 — AI 칩 패키징 전문</div>
-      <div class="card-body">반도체 후공정(패키징·테스트) 전문 기업. AI 반도체 수요 증가로 고난도 패키징 물량이 급증하면서 수혜를 받고 있다. 국내 패키징 전문업체 중 가장 큰 AI 칩 수혜주로 꼽힌다.</div>
+      <div class="card-title">FC-BGA 기판 — 엔비디아 AI 칩의 필수 무대</div>
+      <div class="card-body">
+        <p style="margin-bottom:10px;">엔비디아 GPU 같은 AI 연산 장치와 초고속 메모리를 한데 묶어 안전하게 떠받치려면 이 최고급 FC-BGA 기판이 필수예요. AI 반도체 수요 폭증으로 FC-BGA 기판은 소부장(소재·부품·장비) 업계 주가 급등의 주역으로 떠올랐어요.</p>
+        <p style="margin-bottom:10px;">고사양 FC-BGA 기판 시장에서는 <strong>글로벌 시장점유율 70% 이상</strong>을 선점한 일본의 <strong>이비덴</strong>과 <strong>신코덴키</strong>에 맞서 <strong>삼성전기</strong>가 대규모 투자를 단행하며 세계 1위를 노리고 있어요.</p>
+        <p>국내 FC-BGA 기판 업체 중 매출 비중이 가장 높은 기업으로는 <strong>대덕전자</strong>가 있으며, <strong>LG이노텍</strong>도 이 기판 중심의 체질 전환이 진행 중이에요. 기판 검사 장비사인 <strong>기가비스</strong>와 기판 바닥의 구슬(솔더볼)을 만드는 <strong>덕산하이메탈</strong>도 관련 생태계 기업이에요.</p>
+      </div>
     </div>
 
-    <div class="tbl-wrap">
-      <table class="tbl">
-        <thead><tr><th>기업</th><th>국가</th><th>강점</th></tr></thead>
-        <tbody>
-          <tr><td class="lbl">TSMC</td><td class="val">🇹🇼 대만</td><td class="val">CoWoS(2.5D 패키징) 세계 1위. 엔비디아 AI칩 패키징 독점</td></tr>
-          <tr><td class="lbl">ASE</td><td class="val">🇹🇼 대만</td><td class="val">글로벌 최대 패키징 전문 기업</td></tr>
-          <tr><td class="lbl">앰코테크놀로지</td><td class="val">🇺🇸 미국</td><td class="val">글로벌 2위 패키징 전문 기업</td></tr>
-          <tr><td class="lbl">한미반도체</td><td class="val">🇰🇷 한국</td><td class="val">TC본더 장비 세계 1위</td></tr>
-        </tbody>
-      </table>
+    <div class="card">
+      <div class="card-title">와이어 본딩 소재 — 엠케이전자</div>
+      <div class="card-body">와이어 본딩에서 뼈대 역할을 하는 금속판(리드 프레임)은 대만(CWTC, SDI), 일본(신코덴키, 히타치), 한국(해성DS) 등 동아시아 3국 업체들이 과점 구조를 형성하고 있어요. 접합 소재인 본딩 와이어 시장에서는 <strong>한국의 엠케이전자</strong>를 비롯해 독일·일본계 총 4개사가 주도하고 있어요.</div>
     </div>
   </div>
 
   <div class="sec">
     <span class="sec-label">Part 3</span>
-    <h2 class="sec-title">패키징이 앞으로 더 중요해지는 이유</h2>
+    <h2 class="sec-title">HBM 시대 — 칩을 수직으로 꿰뚫는다 (TSV + TC본딩)</h2>
+    <p class="sec-body">반도체를 고층 아파트처럼 위로 높게 쌓아 올리는 HBM 시장이 열리면서 칩 자체에 수만 개의 미세한 터널을 수직으로 뚫어 상하단 칩을 전극으로 직접 연결하는 <strong>'TSV(관통전극)'</strong> 기술이 도입됐어요.</p>
 
     <div class="card">
-      <div class="card-title">미세공정의 한계 → 패키징이 대안</div>
-      <div class="card-body">반도체 회로를 더 작게 만드는 것(미세공정)은 이제 물리적 한계에 가까워지고 있다. 2nm, 1.4nm까지 내려가면 그 이하는 사실상 불가능하다. 그래서 업계는 "칩 자체를 더 작게 만들기"보다 "여러 칩을 더 효율적으로 연결하기"로 방향을 틀고 있다. 바로 패키징 기술의 혁신이다.</div>
-    </div>
-
-    <div class="stats">
-      <div class="stat-box">
-        <div class="stat-val">2.5<span class="stat-unit">배</span></div>
-        <div class="stat-lbl">2028년까지 HBM 패키징<br>수요 예상 성장률</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-val">40<span class="stat-unit">%</span></div>
-        <div class="stat-lbl">AI 칩 원가 중<br>패키징 비용 비중</div>
+      <div class="card-title">TC 본딩 — 열과 압력으로 칩을 다진다</div>
+      <div class="card-body">
+        <p style="margin-bottom:10px;">현재 HBM 적층의 주력 기술은 열과 압력으로 칩을 다지는 <strong>'TC 본딩(Thermal Compression Bonding)'</strong>이에요.</p>
+        <p style="margin-bottom:10px;">이 시장의 글로벌 강자는 <strong>한미반도체</strong>예요. SK하이닉스 HBM 생산 라인의 핵심 TC본더 장비를 납품하며, 엔비디아가 SK하이닉스 HBM을 선택한 배경에 한미반도체의 장비 기술이 있어요.</p>
+        <p>TC 본딩 시장은 현재 HBM4 이후 세대를 겨냥한 <strong>하이브리드 본딩(Hybrid Bonding)</strong> 기술로의 전환이 가속화되는 분기점에 놓여 있어요. 다음 세대 패키징 패권을 누가 가져가느냐가 업계 최대 관심사예요.</p>
       </div>
     </div>
   </div>
@@ -91,9 +74,9 @@
     <span class="sec-label">결론</span>
     <h2 class="sec-title">마지막 공정이 가장 뜨거운 전쟁터</h2>
     <div class="summary-card">
-      패키징은 더 이상 단순 포장이 아니다. AI 칩의 성능과 원가의 40%를 결정하는 핵심 기술 전쟁터가 됐다. 한미반도체처럼 이 분야의 특정 장비에서 세계 1위를 차지한 기업이 AI 패권 경쟁의 숨은 수혜자다.
+      다이싱으로 잘라내고, 기판 위에 올리고, 와이어나 솔더볼로 연결하고, 열과 압력으로 층층이 쌓는다. 패키징은 더 이상 단순 포장이 아니다. AI 칩의 성능을 결정하는 핵심 기술 전쟁터가 됐고, 이오테크닉스·삼성전기·한미반도체·엠케이전자 같은 K-소부장이 그 틈새에서 세계 시장을 공략하고 있다.
       <div style="margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); font-size:12.5px; color:rgba(255,255,255,0.6);">
-        한 줄 요약 — 미세공정 한계 시대, 패키징이 반도체 성능의 새 경계선이 됐다. AI칩 원가의 40%가 여기서 결정된다.
+        한 줄 요약 — 어떤 옷을 입히느냐가 반도체 성능을 결정한다. 패키징이 AI 패권 경쟁의 마지막 전쟁터다.
       </div>
     </div>
   </div>
