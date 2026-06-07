@@ -1,0 +1,101 @@
+<div class="article-wrap">
+
+  <div class="article-header">
+    <div class="article-chip"><span class="chip-dot"></span>한경비즈니스 1591호 · 2026년 6월</div>
+    <h1 class="article-title">"쌀이 좋아야 밥이 맛있다" 한국 HBM의 비결</h1>
+    <p class="article-sub">SK하이닉스가 HBM 시장을 장악할 수 있었던 진짜 이유 — 웨이퍼 품질부터 적층 기술까지.</p>
+  </div>
+
+  <div class="sec">
+    <span class="sec-label">개요</span>
+    <h2 class="sec-title">HBM이 뭔데?</h2>
+    <p class="sec-body">HBM(High Bandwidth Memory)은 D램 칩을 여러 층으로 쌓아 올린 고성능 메모리다. AI 반도체(GPU)의 핵심 부품으로, 엔비디아의 H100·B200 같은 AI 칩에 필수로 탑재된다.</p>
+    <div class="card">
+      <div class="card-title">일반 D램 vs HBM — 한 눈에 비교</div>
+      <div class="card-body">
+        <div class="flow-wrap" style="margin:0; padding:14px 16px;">
+          <div class="flow">
+            <div class="flow-box">일반 D램<br><span style="font-size:10px;color:var(--text-3)">평면으로 나란히</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">느린 데이터 전송<br><span style="font-size:10px;color:var(--text-3)">AI 연산에 병목</span></div>
+          </div>
+        </div>
+        <div class="flow-wrap" style="margin:8px 0 0; padding:14px 16px;">
+          <div class="flow">
+            <div class="flow-box">HBM<br><span style="font-size:10px;color:var(--text-3)">수직으로 겹겹이 쌓기</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">데이터 이동 경로↓<br><span style="font-size:10px;color:var(--text-3)">속도·전력 효율 극대화</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-box">AI 연산 가속<br><span style="font-size:10px;color:var(--text-3)">ChatGPT, 자율주행 필수</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="sec-label">Part 1</span>
+    <h2 class="sec-title">"쌀이 좋아야 밥이 맛있다" — 웨이퍼 품질이 HBM을 가른다</h2>
+    <p class="sec-body">SK하이닉스 내부에서 자주 쓰는 말이다. HBM은 D램을 128단까지 쌓아 올리는데, 출발점인 웨이퍼(실리콘 판)가 조금이라도 불균일하면 쌓을수록 오차가 누적되어 불량이 터진다.</p>
+
+    <div class="card">
+      <div class="card-title">왜 SK하이닉스가 HBM 1등인가</div>
+      <div class="card-body">
+        <ul class="blist">
+          <li><strong>웨이퍼 품질 집착</strong> — SK실트론(국내 유일 웨이퍼 제조사)과의 긴밀한 협력으로 HBM 전용 고품질 웨이퍼 공급망 구축</li>
+          <li><strong>TSV(Through Silicon Via) 기술</strong> — 칩을 쌓을 때 수직으로 관통하는 초미세 구멍을 뚫어 연결하는 기술. 이 구멍 하나의 지름이 수 마이크로미터(㎛) 수준</li>
+          <li><strong>MR-MUF 공정</strong> — 칩 사이의 빈 공간을 특수 소재로 채워 열 방출을 극대화하는 SK하이닉스 독자 기술. 삼성은 TC-NCF 방식을 쓰지만 수율에서 뒤처지는 상황</li>
+          <li><strong>선제적 투자</strong> — 2018년부터 HBM3, HBM3E 개발에 집중 투자. 엔비디아와 긴밀한 협력 관계 유지</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="sec-label">Part 2</span>
+    <h2 class="sec-title">HBM 세대별 진화</h2>
+
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>세대</th><th>적층 수</th><th>대역폭</th><th>특징</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">HBM2E</td><td class="val">8단</td><td class="val">460GB/s</td><td class="val">데이터센터 초기 탑재</td></tr>
+          <tr><td class="lbl">HBM3</td><td class="val">12단</td><td class="val">819GB/s</td><td class="val">엔비디아 H100에 탑재</td></tr>
+          <tr><td class="lbl">HBM3E</td><td class="val">12~16단</td><td class="val">1.2TB/s</td><td class="val">엔비디아 B200에 탑재. 현재 주력</td></tr>
+          <tr><td class="lbl">HBM4</td><td class="val">16단+</td><td class="val">2TB/s+</td><td class="val">2026년 양산 목표. 차세대 AI칩용</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hl"><strong>핵심 포인트</strong> — 단 수가 올라갈수록 웨이퍼 품질·공정 정밀도 요구가 기하급수적으로 높아진다. 128단을 쌓는 HBM4에서는 웨이퍼 한 장의 미세 결함도 전체 스택(묶음)을 날려버릴 수 있다.</div>
+  </div>
+
+  <div class="sec">
+    <span class="sec-label">Part 3</span>
+    <h2 class="sec-title">SK하이닉스 vs 삼성전자 — HBM 현황</h2>
+
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>구분</th><th>SK하이닉스</th><th>삼성전자</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">HBM 시장점유율</td><td class="val"><span class="badge badge-blue">약 50~53%</span></td><td class="val">약 40%</td></tr>
+          <tr><td class="lbl">엔비디아 납품</td><td class="val">HBM3E 독점 공급</td><td class="val">퀄 테스트 통과 지연</td></tr>
+          <tr><td class="lbl">핵심 기술</td><td class="val">MR-MUF, TSV</td><td class="val">TC-NCF</td></tr>
+          <tr><td class="lbl">수율(정상품 비율)</td><td class="val">업계 최고 수준</td><td class="val">수율 개선 과제 남음</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="sec-label">결론</span>
+    <h2 class="sec-title">AI 시대의 최대 수혜자</h2>
+    <div class="summary-card">
+      ChatGPT 하나를 학습시키는 데 수천 개의 AI 칩이 필요하고, 각 칩에는 HBM이 필수다. AI 수요가 늘수록 HBM 수요는 폭발적으로 늘어나는 구조. SK하이닉스가 이 시장에서 독주하는 한, 한국의 반도체 호황은 계속된다.
+      <div style="margin-top:14px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); font-size:12.5px; color:rgba(255,255,255,0.6);">
+        한 줄 요약 — "쌀(웨이퍼)이 좋아야 밥(HBM)이 맛있다." 품질 집착과 선제 투자가 SK하이닉스를 HBM 세계 1위로 만들었다.
+      </div>
+    </div>
+  </div>
+
+</div>
