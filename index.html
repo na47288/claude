@@ -29,15 +29,12 @@
 html, body {
   height: 100%; overflow: hidden;
   font-family: 'Inter', -apple-system, 'Apple SD Gothic Neo', sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg); color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── LAYOUT ── */
 .layout { display: flex; height: 100vh; }
 
-/* ── SIDEBAR ── */
 .sidebar {
   width: var(--sidebar-w);
   background: var(--sidebar-bg);
@@ -55,369 +52,146 @@ html, body {
   padding: 20px 18px 16px;
 }
 .logo-mark {
-  width: 26px; height: 26px;
-  background: var(--text);
-  border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
+  width: 26px; height: 26px; background: var(--text);
+  border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
 .logo-mark svg { width: 13px; height: 13px; fill: white; }
-.logo-text {
-  font-size: 13px; font-weight: 700;
-  color: var(--text); white-space: nowrap;
-  letter-spacing: -0.01em;
-}
+.logo-text { font-size: 13px; font-weight: 700; color: var(--text); white-space: nowrap; letter-spacing: -0.01em; }
 
-.sidebar-scroll {
-  flex: 1; overflow-y: auto; padding: 8px 10px 20px;
-  scrollbar-width: none;
-}
+.sidebar-scroll { flex: 1; overflow-y: auto; padding: 8px 10px 20px; scrollbar-width: none; }
 .sidebar-scroll::-webkit-scrollbar { display: none; }
 
-/* Nav section */
 .nav-sec { margin-bottom: 2px; }
-
 .nav-sec-btn {
   display: flex; align-items: center; gap: 8px;
-  width: 100%; padding: 7px 8px;
-  border-radius: 8px; cursor: pointer;
-  border: none; background: none;
-  font-family: inherit; text-align: left;
-  transition: background var(--tr);
-  color: var(--text-2);
+  width: 100%; padding: 7px 8px; border-radius: 8px; cursor: pointer;
+  border: none; background: none; font-family: inherit; text-align: left;
+  transition: background var(--tr); color: var(--text-2);
 }
 .nav-sec-btn:hover { background: var(--hover-bg); }
-
-.nav-sec-icon {
-  width: 16px; height: 16px; flex-shrink: 0; opacity: 0.5;
-}
-.nav-sec-title {
-  font-size: 12px; font-weight: 600;
-  letter-spacing: 0.02em; flex: 1;
-  color: var(--text-2);
-}
-.nav-sec-chevron {
-  width: 12px; height: 12px; color: var(--text-3);
-  transition: transform var(--tr); flex-shrink: 0;
-}
+.nav-sec-icon { width: 16px; height: 16px; flex-shrink: 0; opacity: 0.5; }
+.nav-sec-title { font-size: 12px; font-weight: 600; letter-spacing: 0.02em; flex: 1; color: var(--text-2); }
+.nav-sec-chevron { width: 12px; height: 12px; color: var(--text-3); transition: transform var(--tr); flex-shrink: 0; }
 .nav-sec.open .nav-sec-chevron { transform: rotate(90deg); }
-
-.nav-children {
-  display: none; flex-direction: column; gap: 1px;
-  padding: 2px 0 6px 8px;
-}
+.nav-children { display: none; flex-direction: column; gap: 1px; padding: 2px 0 6px 8px; }
 .nav-sec.open .nav-children { display: flex; }
 
 .nav-item {
   display: flex; align-items: center; gap: 8px;
   padding: 6px 10px; border-radius: 7px; cursor: pointer;
   border: none; background: none; font-family: inherit;
-  text-align: left; width: 100%;
-  transition: background var(--tr);
-  color: var(--text-2); font-size: 13px;
-  font-weight: 400; letter-spacing: -0.01em;
+  text-align: left; width: 100%; transition: background var(--tr);
+  color: var(--text-2); font-size: 13px; font-weight: 400; letter-spacing: -0.01em;
 }
 .nav-item:hover { background: var(--hover-bg); color: var(--text); }
 .nav-item.active { background: var(--active-bg); color: var(--text); font-weight: 500; }
-
-.nav-item-dot {
-  width: 4px; height: 4px; border-radius: 50%;
-  background: var(--text-3); flex-shrink: 0;
-}
+.nav-item-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-3); flex-shrink: 0; }
 .nav-item.active .nav-item-dot { background: var(--text); }
+.nav-item-date { margin-left: auto; font-size: 10.5px; color: var(--text-3); font-variant-numeric: tabular-nums; }
 
-.nav-item-date {
-  margin-left: auto; font-size: 10.5px;
-  color: var(--text-3); font-variant-numeric: tabular-nums;
+/* 하위 그룹 (반도체/전력 같은 중간 카테고리) */
+.nav-group { margin-bottom: 1px; }
+.nav-group-btn {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 6px 10px; border-radius: 7px; cursor: pointer;
+  border: none; background: none; font-family: inherit; text-align: left;
+  transition: background var(--tr); color: var(--text-2); font-size: 13px; font-weight: 400;
 }
+.nav-group-btn:hover { background: var(--hover-bg); color: var(--text); }
+.nav-group-chevron { width: 10px; height: 10px; color: var(--text-3); transition: transform var(--tr); flex-shrink: 0; margin-left: auto; }
+.nav-group.open .nav-group-chevron { transform: rotate(90deg); }
+.nav-sub-children { display: none; flex-direction: column; gap: 1px; padding: 2px 0 4px 10px; }
+.nav-group.open .nav-sub-children { display: flex; }
+.nav-sub-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 10px; border-radius: 7px; cursor: pointer;
+  border: none; background: none; font-family: inherit;
+  text-align: left; width: 100%; transition: background var(--tr);
+  color: var(--text-3); font-size: 12.5px; font-weight: 400;
+}
+.nav-sub-item:hover { background: var(--hover-bg); color: var(--text); }
+.nav-sub-item.active { background: var(--active-bg); color: var(--text); font-weight: 500; }
+.nav-sub-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-3); flex-shrink: 0; }
+.nav-sub-item.active .nav-sub-dot { background: var(--text); }
 
-.sidebar-footer {
-  padding: 12px 18px;
-  border-top: 1px solid var(--sidebar-border);
-  font-size: 10.5px; color: var(--text-3);
-}
+.sidebar-footer { padding: 12px 18px; border-top: 1px solid var(--sidebar-border); font-size: 10.5px; color: var(--text-3); }
 
-/* ── MAIN ── */
-.main {
-  flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0;
-  margin-left: 0;
-  transition: margin-left var(--tr);
-}
+.main { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0; margin-left: 0; transition: margin-left var(--tr); }
 .main.sidebar-open { margin-left: var(--sidebar-w); }
 
-/* ── TOPBAR ── */
 .topbar {
-  height: var(--topbar-h);
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center;
-  padding: 0 20px; gap: 14px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(12px);
-  position: sticky; top: 0; z-index: 20;
-  flex-shrink: 0;
+  height: var(--topbar-h); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; padding: 0 20px; gap: 14px;
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+  position: sticky; top: 0; z-index: 20; flex-shrink: 0;
 }
-
-.hamburger {
-  width: 32px; height: 32px; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: background var(--tr); flex-shrink: 0;
-}
+.hamburger { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background var(--tr); flex-shrink: 0; }
 .hamburger:hover { background: var(--hover-bg); }
 .ham-lines { display: flex; flex-direction: column; gap: 4px; }
-.ham-line { width: 16px; height: 1.5px; background: var(--text); border-radius: 2px; transition: var(--tr); }
-
-.breadcrumb {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 13px; color: var(--text-3);
-}
+.ham-line { width: 16px; height: 1.5px; background: var(--text); border-radius: 2px; }
+.breadcrumb { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-3); }
 .bc-item { white-space: nowrap; }
 .bc-item.cur { color: var(--text); font-weight: 500; }
 .bc-sep { color: var(--border); font-size: 16px; }
-
 .topbar-actions { margin-left: auto; display: flex; gap: 6px; }
-.pill-btn {
-  height: 28px; padding: 0 14px;
-  border: 1px solid var(--border); border-radius: 20px;
-  background: var(--bg); font-size: 12px; font-weight: 500;
-  color: var(--text-2); cursor: pointer; font-family: inherit;
-  transition: all var(--tr);
-}
+.pill-btn { height: 28px; padding: 0 14px; border: 1px solid var(--border); border-radius: 20px; background: var(--bg); font-size: 12px; font-weight: 500; color: var(--text-2); cursor: pointer; font-family: inherit; transition: all var(--tr); }
 .pill-btn:hover { background: var(--hover-bg); color: var(--text); }
-.pill-btn.dark {
-  background: var(--text); color: white; border-color: var(--text);
-}
-.pill-btn.dark:hover { background: #222; }
 
-/* ── CONTENT ── */
 .content { flex: 1; overflow-y: auto; background: var(--bg); }
 .content::-webkit-scrollbar { width: 5px; }
 .content::-webkit-scrollbar-track { background: transparent; }
 .content::-webkit-scrollbar-thumb { background: #e0e0e0; border-radius: 3px; }
 
-.page { display: none; }
-.page.active { display: block; }
-
-/* ── ARTICLE ── */
+/* ── 아티클 공통 스타일 ── */
 .article-wrap { max-width: 760px; margin: 0 auto; padding: 52px 40px 120px; }
-
-/* Header */
-.article-header {
-  position: relative;
-  padding-bottom: 36px;
-  margin-bottom: 36px;
-  border-bottom: 1px solid var(--border);
-}
-
-.article-chip {
-  display: inline-flex; align-items: center;
-  gap: 6px; padding: 4px 10px;
-  background: var(--pill-bg); border-radius: 20px;
-  font-size: 11.5px; font-weight: 500;
-  color: var(--text-2); margin-bottom: 16px;
-  position: relative;
-}
+.article-header { position: relative; padding-bottom: 36px; margin-bottom: 36px; border-bottom: 1px solid var(--border); }
+.article-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; background: var(--pill-bg); border-radius: 20px; font-size: 11.5px; font-weight: 500; color: var(--text-2); margin-bottom: 16px; }
 .chip-dot { width: 5px; height: 5px; border-radius: 50%; background: #22c55e; }
-
-.article-title {
-  font-size: 32px; font-weight: 800;
-  line-height: 1.2; letter-spacing: -0.04em;
-  color: var(--text); margin-bottom: 14px;
-  position: relative;
-}
-
-.article-sub {
-  font-size: 15px; color: var(--text-2);
-  line-height: 1.7; max-width: 620px;
-  position: relative;
-}
-
-/* Meta row */
-.meta-row {
-  display: flex; align-items: center; gap: 16px;
-  margin-top: 18px; position: relative; z-index: 1;
-}
-.meta-item { font-size: 12px; color: var(--text-3); }
-
-/* TOC */
-.toc-card {
-  background: var(--sidebar-bg); border: 1px solid var(--border);
-  border-radius: 14px; padding: 20px 24px; margin-bottom: 44px;
-}
-.toc-label {
-  font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--text-3); margin-bottom: 14px;
-}
-.toc-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-.toc-list li a {
-  font-size: 13px; color: var(--text-2); text-decoration: none;
-  transition: color var(--tr);
-}
-.toc-list li a:hover { color: var(--text); }
-.toc-list li.sub a { padding-left: 14px; font-size: 12.5px; color: var(--text-3); }
-
-/* Section */
+.article-title { font-size: 32px; font-weight: 800; line-height: 1.2; letter-spacing: -0.04em; color: var(--text); margin-bottom: 14px; }
+.article-sub { font-size: 15px; color: var(--text-2); line-height: 1.7; max-width: 620px; }
 .sec { margin-bottom: 56px; }
-.sec-label {
-  display: inline-block; font-size: 10.5px; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--text-3); margin-bottom: 8px;
-}
-.sec-title {
-  font-size: 22px; font-weight: 800; letter-spacing: -0.03em;
-  color: var(--text); line-height: 1.3; margin-bottom: 16px;
-}
-.sec-body {
-  font-size: 14.5px; color: var(--text-2);
-  line-height: 1.8; margin-bottom: 20px;
-}
-
-/* Summary card */
-.summary-card {
-  background: var(--text); color: white;
-  border-radius: 16px; padding: 22px 24px; margin-bottom: 32px;
-  font-size: 13.5px; line-height: 1.7;
-}
-.summary-card strong { font-weight: 600; }
-
-/* Sub heading */
-.sh {
-  font-size: 16px; font-weight: 700; letter-spacing: -0.025em;
-  color: var(--text); margin-top: 32px; margin-bottom: 12px;
-}
-
-/* Card */
-.card {
-  background: var(--bg); border: 1px solid var(--border);
-  border-radius: 14px; padding: 20px 22px; margin-bottom: 10px;
-  transition: box-shadow var(--tr);
-}
+.sec-label { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin-bottom: 8px; }
+.sec-title { font-size: 22px; font-weight: 800; letter-spacing: -0.03em; color: var(--text); line-height: 1.3; margin-bottom: 16px; }
+.sec-body { font-size: 14.5px; color: var(--text-2); line-height: 1.8; margin-bottom: 20px; }
+.sh { font-size: 16px; font-weight: 700; letter-spacing: -0.025em; color: var(--text); margin-top: 32px; margin-bottom: 12px; }
+.card { background: var(--bg); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; margin-bottom: 10px; transition: box-shadow var(--tr); }
 .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-
-.card-title {
-  font-size: 14px; font-weight: 700; letter-spacing: -0.02em;
-  color: var(--text); margin-bottom: 6px;
-  display: flex; align-items: center; gap: 8px;
-}
-.card-num {
-  width: 22px; height: 22px; border-radius: 6px;
-  background: var(--text); color: white;
-  font-size: 11px; font-weight: 700;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
+.card-title { font-size: 14px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.card-num { width: 22px; height: 22px; border-radius: 6px; background: var(--text); color: white; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .card-body { font-size: 13.5px; color: var(--text-2); line-height: 1.7; }
-.card-tag {
-  display: inline-block; margin-top: 8px;
-  padding: 2px 8px; background: var(--pill-bg);
-  border-radius: 20px; font-size: 11px;
-  font-weight: 500; color: var(--text-3);
-}
-
-/* Highlight */
-.hl {
-  background: var(--pill-bg); border-radius: 10px;
-  padding: 14px 18px; margin: 20px 0;
-  font-size: 13.5px; color: var(--text-2); line-height: 1.7;
-  border-left: 3px solid var(--text);
-}
+.card-tag { display: inline-block; margin-top: 8px; padding: 2px 8px; background: var(--pill-bg); border-radius: 20px; font-size: 11px; font-weight: 500; color: var(--text-3); }
+.hl { background: var(--pill-bg); border-radius: 10px; padding: 14px 18px; margin: 20px 0; font-size: 13.5px; color: var(--text-2); line-height: 1.7; border-left: 3px solid var(--text); }
 .hl strong { color: var(--text); }
-
-/* Table */
-.tbl-wrap {
-  border: 1px solid var(--border); border-radius: 12px;
-  overflow: hidden; margin: 18px 0;
-}
+.summary-card { background: var(--text); color: white; border-radius: 16px; padding: 22px 24px; margin-bottom: 32px; font-size: 13.5px; line-height: 1.7; }
+.summary-card strong { font-weight: 600; }
+.tbl-wrap { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin: 18px 0; }
 .tbl { width: 100%; border-collapse: collapse; }
-.tbl th {
-  padding: 10px 16px; background: var(--sidebar-bg);
-  font-size: 11px; font-weight: 600; text-align: left;
-  letter-spacing: 0.04em; text-transform: uppercase;
-  color: var(--text-3); border-bottom: 1px solid var(--border);
-}
-.tbl td {
-  padding: 12px 16px; font-size: 13.5px;
-  color: var(--text); border-bottom: 1px solid var(--sidebar-bg);
-  line-height: 1.5; vertical-align: top;
-}
+.tbl th { padding: 10px 16px; background: var(--sidebar-bg); font-size: 11px; font-weight: 600; text-align: left; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-3); border-bottom: 1px solid var(--border); }
+.tbl td { padding: 12px 16px; font-size: 13.5px; color: var(--text); border-bottom: 1px solid var(--sidebar-bg); line-height: 1.5; vertical-align: top; }
 .tbl tr:last-child td { border-bottom: none; }
-.tbl td.lbl { font-weight: 600; width: 130px; color: var(--text); }
+.tbl td.lbl { font-weight: 600; color: var(--text); white-space: nowrap; }
 .tbl td.val { color: var(--text-2); }
-.tbl td.badge { white-space: nowrap; }
-
-/* Badge */
-.badge {
-  display: inline-block; padding: 2px 8px;
-  border-radius: 20px; font-size: 11px; font-weight: 600;
-}
-.badge-up { background: #fef2f2; color: #dc2626; }
-.badge-dn { background: #f0fdf4; color: #16a34a; }
-.badge-neutral { background: #fffbeb; color: #d97706; }
-
-/* Stats grid */
-.stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 18px 0; }
-.stat-box {
-  background: var(--sidebar-bg); border: 1px solid var(--border);
-  border-radius: 12px; padding: 18px 16px;
-}
-.stat-val {
-  font-size: 28px; font-weight: 800; letter-spacing: -0.05em;
-  color: var(--text); line-height: 1;
-}
-.stat-unit { font-size: 14px; font-weight: 400; color: var(--text-3); }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+.badge-blue { background: #eff6ff; color: #1d4ed8; }
+.badge-red { background: #fef2f2; color: #dc2626; }
+.badge-green { background: #f0fdf4; color: #16a34a; }
+.badge-gray { background: var(--pill-bg); color: var(--text-3); }
+.stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin: 18px 0; }
+.stat-box { background: var(--sidebar-bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px 16px; }
+.stat-val { font-size: 36px; font-weight: 800; letter-spacing: -0.05em; color: var(--text); line-height: 1; }
+.stat-unit { font-size: 16px; font-weight: 400; color: var(--text-3); }
 .stat-lbl { font-size: 12px; color: var(--text-3); margin-top: 6px; line-height: 1.4; }
-
-/* Flow */
-.flow-wrap {
-  border: 1px solid var(--border); border-radius: 12px;
-  padding: 18px 22px; margin: 18px 0; overflow-x: auto;
-  background: var(--sidebar-bg);
-}
+.flow-wrap { border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; margin: 18px 0; overflow-x: auto; background: var(--sidebar-bg); }
 .flow { display: flex; align-items: center; gap: 0; min-width: max-content; }
-.flow-box {
-  padding: 8px 14px; background: var(--bg);
-  border: 1px solid var(--border); border-radius: 8px;
-  font-size: 12.5px; font-weight: 500; color: var(--text);
-  white-space: nowrap;
-}
-.flow-arrow { padding: 0 8px; font-size: 14px; color: var(--text-3); margin-top: 0; }
-
-/* Bullet */
+.flow-box { padding: 8px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 12.5px; font-weight: 500; color: var(--text); white-space: nowrap; }
+.flow-arrow { padding: 0 8px; font-size: 14px; color: var(--text-3); }
 .blist { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
 .blist li { display: flex; gap: 10px; font-size: 14px; color: var(--text-2); line-height: 1.7; align-items: flex-start; }
 .blist li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--text-3); flex-shrink: 0; margin-top: 9px; }
 
-/* 3고 big section cards */
-.pillar-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 24px 0; }
-.pillar {
-  border: 1px solid var(--border); border-radius: 14px;
-  padding: 20px; transition: box-shadow var(--tr);
-}
-.pillar:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-.pillar-icon {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
-  text-transform: uppercase; color: var(--text-3); margin-bottom: 8px;
-}
-.pillar-name { font-size: 18px; font-weight: 800; letter-spacing: -0.03em; color: var(--text); margin-bottom: 8px; }
-.pillar-desc { font-size: 12.5px; color: var(--text-2); line-height: 1.6; }
-.pillar-val { font-size: 22px; font-weight: 800; color: var(--text); letter-spacing: -0.04em; margin-top: 12px; }
-
-/* Loop divider */
-.loop-arrow {
-  text-align: center; padding: 12px 0;
-  font-size: 12px; color: var(--text-3);
-  letter-spacing: 0.05em;
-}
-
-
-/* Empty */
-.empty {
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center; min-height: 60vh; gap: 12px; text-align: center;
-}
-.empty-ico {
-  width: 44px; height: 44px; background: var(--sidebar-bg);
-  border-radius: 12px; display: flex; align-items: center; justify-content: center;
-}
+/* 로딩 / 빈 상태 */
+.loading { display: flex; align-items: center; justify-content: center; min-height: 60vh; font-size: 13px; color: var(--text-3); }
+.empty { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; gap: 12px; text-align: center; }
 .empty-t { font-size: 15px; font-weight: 600; color: var(--text); }
 .empty-d { font-size: 13px; color: var(--text-3); line-height: 1.6; max-width: 280px; }
 </style>
@@ -425,8 +199,7 @@ html, body {
 <body>
 <div class="layout">
 
-  <!-- ── SIDEBAR ── -->
-  <aside class="sidebar" id="sidebar">
+  <aside class="sidebar collapsed" id="sidebar">
     <div class="sidebar-logo">
       <div class="logo-mark">
         <svg viewBox="0 0 16 16"><path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM9 9h5v5H9z"/></svg>
@@ -439,9 +212,7 @@ html, body {
       <!-- 거시경제 -->
       <div class="nav-sec open" id="sec-macro">
         <button class="nav-sec-btn" onclick="toggleSec('macro')">
-          <svg class="nav-sec-icon" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M1 11l4-4 3 3 4-5 3 2V14H1z"/>
-          </svg>
+          <svg class="nav-sec-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M1 11l4-4 3 3 4-5 3 2V14H1z"/></svg>
           <span class="nav-sec-title">거시경제</span>
           <svg class="nav-sec-chevron" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3l5 5-5 5V3z"/></svg>
         </button>
@@ -457,9 +228,7 @@ html, body {
       <!-- 데일리 경제뉴스 -->
       <div class="nav-sec" id="sec-daily">
         <button class="nav-sec-btn" onclick="toggleSec('daily')">
-          <svg class="nav-sec-icon" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M14 3H2a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1zM2 5h12v1H2V5zm0 2h8v1H2V7zm0 2h5v1H2V9z"/>
-          </svg>
+          <svg class="nav-sec-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M14 3H2a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1zM2 5h12v1H2V5zm0 2h8v1H2V7zm0 2h5v1H2V9z"/></svg>
           <span class="nav-sec-title">데일리 경제뉴스</span>
           <svg class="nav-sec-chevron" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3l5 5-5 5V3z"/></svg>
         </button>
@@ -474,18 +243,34 @@ html, body {
       <!-- 경제잡지 -->
       <div class="nav-sec" id="sec-mag">
         <button class="nav-sec-btn" onclick="toggleSec('mag')">
-          <svg class="nav-sec-icon" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M13 1H3a1 1 0 00-1 1v12a1 1 0 001 1h10a1 1 0 001-1V2a1 1 0 00-1-1zM7 4h5v1H7V4zm-3 0h2v1H4V4zm3 3h5v1H7V7zm-3 0h2v1H4V7zm3 3h5v1H7v-1zm-3 0h2v1H4v-1z"/>
-          </svg>
+          <svg class="nav-sec-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M13 1H3a1 1 0 00-1 1v12a1 1 0 001 1h10a1 1 0 001-1V2a1 1 0 00-1-1zM7 4h5v1H7V4zm-3 0h2v1H4V4zm3 3h5v1H7V7zm-3 0h2v1H4V7zm3 3h5v1H7v-1zm-3 0h2v1H4v-1z"/></svg>
           <span class="nav-sec-title">경제잡지</span>
           <svg class="nav-sec-chevron" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3l5 5-5 5V3z"/></svg>
         </button>
         <div class="nav-children">
-          <button class="nav-item" id="ni-semi" onclick="showPage('semi')">
-            <span class="nav-item-dot"></span>
-            <span>260611 반도체/전력</span>
-            <span class="nav-item-date">06.11</span>
-          </button>
+
+          <!-- 260611 반도체/전력 하위 그룹 -->
+          <div class="nav-group open" id="grp-semi">
+            <button class="nav-group-btn" onclick="toggleGroup('semi')">
+              <span class="nav-item-dot"></span>
+              <span>260611 반도체/전력</span>
+              <span class="nav-item-date" style="margin-left:auto; margin-right:4px;">06.11</span>
+              <svg class="nav-group-chevron" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3l5 5-5 5V3z"/></svg>
+            </button>
+            <div class="nav-sub-children">
+              <button class="nav-sub-item" id="ni-semi-sobu" onclick="showPage('semi-sobu')">
+                <span class="nav-sub-dot"></span>
+                <span>500조 호황 — 소부장 현실</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+              <button class="nav-sub-item" id="ni-semi-siltron" onclick="showPage('semi-siltron')">
+                <span class="nav-sub-dot"></span>
+                <span>SK실트론 5조 몸값</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -494,15 +279,10 @@ html, body {
     <div class="sidebar-footer">지식은 쌓인다</div>
   </aside>
 
-  <!-- ── MAIN ── -->
-  <div class="main">
+  <div class="main" id="main">
     <header class="topbar">
       <div class="hamburger" onclick="toggleSidebar()">
-        <div class="ham-lines">
-          <div class="ham-line"></div>
-          <div class="ham-line"></div>
-          <div class="ham-line"></div>
-        </div>
+        <div class="ham-lines"><div class="ham-line"></div><div class="ham-line"></div><div class="ham-line"></div></div>
       </div>
       <div class="breadcrumb" id="bc">
         <span class="bc-item">거시경제</span>
@@ -515,427 +295,79 @@ html, body {
     </header>
 
     <div class="content" id="content">
+      <div class="loading">불러오는 중…</div>
+    </div>
+  </div>
 
-      <!-- ════════════════════════════════
-           PAGE: 202606 거시경제현황
-      ════════════════════════════════ -->
-      <div class="page active" id="page-macro1">
-        <div class="article-wrap">
-
-          <!-- Header -->
-          <div class="article-header">
-            <div class="article-chip">
-              <span class="chip-dot"></span>
-              거시경제 · 2026년 6월
-            </div>
-            <h1 class="article-title editable">3고(高) 시대 - 고물가/고금리/고환율</h1>
-          </div>
-
-
-          <!-- ── 개요 ── -->
-          <div class="sec" id="overview">
-
-          </div>
-
-          <!-- ── 고물가 ── -->
-          <div class="sec" id="inflation">
-            <span class="sec-label">Part 1</span>
-            <h2 class="sec-title editable">고물가 — 왜 물가가 높은가</h2>
-            <p class="sec-body">단순히 유가가 올라서가 아니다. 진짜 문제는 인플레이션이 5년 이상 지속되며 고질병처럼 고착되고 있다는 것이다.</p>
-
-            <div id="inflation-cause">
-              <div class="sh editable">원인</div>
-
-              <div class="card">
-                <div class="card-title editable">
-                  <div class="card-num">1</div>
-                  중동전쟁 → 유가 급등
-                </div>
-                <div class="card-body editable">전쟁 전 배럴당 $60이었던 국제유가가 전쟁 중 $110까지 치솟고 현재 $90 수준. 전쟁이 끝나더라도 $60으로 돌아가기는 어렵다.</div>
-                <div style="margin-top:10px; padding:12px 14px; background:var(--sidebar-bg); border-radius:8px; font-size:13px; color:var(--text-2); line-height:1.65;">
-                  <strong style="color:var(--text)">이유 ①</strong> 생산시설 파괴 — UAE·카타르·사우디 정유 시설 손상. 정상화까지 약 3년 소요<br>
-                  <strong style="color:var(--text)">이유 ②</strong> 호르무즈 프리미엄 — 이란이 해협 봉쇄를 협상 카드로 학습. 용선료·보험료·인건비 급등
-                </div>
-                <div class="card-tag">"음식값 2만원인데 배송비 3만원이면 소비자 부담은 5만원" — 에너지 원가보다 운송비가 문제</div>
-                <div style="margin-top:14px;">
-                  <img src="https://raw.githubusercontent.com/na47288/claude/main/images/oil-price.png" alt="WTI 원유 선물 차트" style="width:100%; border-radius:10px; border:1px solid var(--border);">
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-title editable">
-                  <div class="card-num">2</div>
-                  인플레이션 고착화
-                </div>
-                <div class="card-body editable">2021년 3월부터 연준 목표치 2%를 초과한 물가가 2026년 현재까지 <strong>5년 4개월째</strong> 목표로 돌아오지 못하고 있다. 관세 충격, 중동전쟁 등 새로운 자극 요인이 계속 등장하며 고질병으로 굳어지고 있다.</div>
-                <div class="card-tag">"낫나 싶으면 재발하고, 누적되면 고질병이 됨"</div>
-                <div style="margin-top:14px;">
-                  <img src="https://raw.githubusercontent.com/na47288/claude/main/images/cpi.png" alt="미국 CPI YoY 차트" style="width:100%; border-radius:10px; border:1px solid var(--border);">
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-title editable">
-                  <div class="card-num">3</div>
-                  유가 → 물가 전달 경로 (3~6개월 시차)
-                </div>
-                <div class="card-body editable">유가 상승은 두 단계를 거쳐 물가에 전달된다.</div>
-                <div style="margin-top:12px;">
-                  <div class="flow-wrap" style="margin:0; padding:14px 16px;">
-                    <div class="flow">
-                      <div class="flow-box">유가↑</div>
-                      <div class="flow-arrow">→</div>
-                      <div class="flow-box">기름값↑<br><span style="font-size:10px;color:var(--text-3)">1차·즉시</span></div>
-                      <div class="flow-arrow">→</div>
-                      <div class="flow-box">에너지 비용↑</div>
-                      <div class="flow-arrow">→</div>
-                      <div class="flow-box">제조원가↑<br><span style="font-size:10px;color:var(--text-3)">PPI</span></div>
-                      <div class="flow-arrow">→</div>
-                      <div class="flow-box">소비자물가↑<br><span style="font-size:10px;color:var(--text-3)">CPI·3~6개월</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div id="inflation-effect" style="margin-top:28px;">
-              <div class="sh editable">영향</div>
-              <div class="tbl-wrap">
-                <table class="tbl">
-                  <thead><tr><th>대상</th><th>영향</th></tr></thead>
-                  <tbody>
-                    <tr><td class="lbl">소비자</td><td class="val">생활비↑ · 실질 구매력↓ · 소비 위축</td></tr>
-                    <tr><td class="lbl">기업</td><td class="val">원자재 원가↑ · 사업계획 狂 · 의사결정 마비</td></tr>
-                    <tr><td class="lbl">중앙은행</td><td class="val">금리 인상 압박↑ (전쟁이 끝나면 불필요할 수도 있어 딜레마)</td></tr>
-                    <tr><td class="lbl">금융시장</td><td class="val">장기 국채금리↑ · 채권 가격↓ · 긴축 압박</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="hl editable"><strong>왜 물가 오르면 장기금리도 오르나?</strong><br>10년짜리 국채를 사는 건 나라한테 10년간 돈 빌려주는 것.<br>만약 100만원 빌려줬으면 10년 후 100만원을 나라가 갚아야함.<br>그런데 물가 오르는 속도가 엄청 빠르면 10년 후 100만원 가치가 희석됨<br>그래서 물가 오를 것 같으면 투자자들이 "이자 더 줘"라고 요구하고, 그게 장기금리 상승으로 나타나는 것</div>
-            </div>
-          </div>
-
-          <!-- ── 고금리 ── -->
-          <div class="sec" id="rate">
-            <span class="sec-label">Part 2</span>
-            <h2 class="sec-title editable">고금리 — 왜 금리가 높은가</h2>
-            <p class="sec-body">미국 국채 10년물 4.5%, 30년물 5.0%. 역대급 수준의 금리가 지속되는 이유는 하나가 아니다.</p>
-
-            <div id="rate-trend" style="margin-bottom:28px;">
-              <div class="sh editable">미국 국채금리 트렌드</div>
-              <div style="display:flex; flex-direction:column; gap:14px; margin-top:12px;">
-                <div>
-                  <div style="font-size:11px; font-weight:600; color:var(--text-3); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">10년물</div>
-                  <img src="https://raw.githubusercontent.com/na47288/claude/main/images/us10y.png" alt="미국 국채 10년물 금리" style="width:100%; border-radius:10px; border:1px solid var(--border);">
-                </div>
-                <div>
-                  <div style="font-size:11px; font-weight:600; color:var(--text-3); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">30년물</div>
-                  <img src="https://raw.githubusercontent.com/na47288/claude/main/images/us30y.png" alt="미국 국채 30년물 금리" style="width:100%; border-radius:10px; border:1px solid var(--border);">
-                </div>
-              </div>
-            </div>
-
-            <div id="rate-cause">
-              <div class="sh editable">미국 국채금리 상승 4가지 이유</div>
-
-              <div class="tbl-wrap">
-                <table class="tbl">
-                  <thead><tr><th>원인</th><th>메커니즘</th></tr></thead>
-                  <tbody>
-                    <tr>
-                      <td class="lbl">① 물가 고착화</td>
-                      <td class="val">장기 인플레이션 기대 → 장기 국채 금리↑. "오래 빌려줄수록 물가 걱정이 커지니 이자를 더 요구"</td>
-                    </tr>
-                    <tr>
-                      <td class="lbl">② 전쟁 재정지출</td>
-                      <td class="val">국방부 추가 예산 + 무기 재고 보충 → 국채 발행↑ → 금리↑. 재정적자 악화.
-                        <div style="margin-top:8px; padding:10px 12px; background:var(--sidebar-bg); border-radius:8px; font-size:12.5px; color:var(--text-2); line-height:1.7;">
-                          국채가 많아지면 → 나라 입장에서 "우리 채권 사주세요~" 경쟁이 심해짐<br>
-                          → 투자자들이 "그럼 이자 더 줘야 살지" 요구<br>
-                          → 금리↑
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="lbl">③ 빅테크 AI 투자</td>
-                      <td class="val">채권을 사주던 빅테크가 AI 데이터센터 투자로 자금 수요자로 전환 → 시중 자금 흡수 → 금리↑
-                        <div style="margin-top:8px; padding:10px 12px; background:var(--sidebar-bg); border-radius:8px; font-size:12.5px; color:var(--text-2); line-height:1.8;">
-                          <strong style="color:var(--text)">과거</strong><br>
-                          애플, 구글 같은 빅테크는 현금이 넘쳐남. 남는 돈을 안전하게 굴리려고 미국 국채를 사둠.<br>
-                          → 국채 수요↑ → 채권 가격↑ → 금리↓ (안정)<br><br>
-                          <strong style="color:var(--text)">현재</strong><br>
-                          데이터센터 짓는 데 수백조가 필요 → 국채 살 돈이 없어짐 (기존 수요자 이탈)<br>
-                          → 심지어 자금이 더 필요하면 시장에서 돈을 빌림<br>
-                          → 채권 사야 할 수요자들이 AI 투자로 흘러감<br>
-                          → 정부는 돈 필요해서 국채 발행은 계속 하는데 채권 살 사람은 없어져서 계속 높은 금리로 꼬셔야 함
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="lbl">④ 신흥국 국채 매각</td>
-                      <td class="val">환율 방어 위해 미 국채(외환보유고) 팔아 달러 조달 → 국채 수요↓ → 금리↑
-                        <div style="margin-top:8px; padding:10px 12px; background:var(--sidebar-bg); border-radius:8px; font-size:12.5px; color:var(--text-2); line-height:1.8;">
-                          달러가 너무 강해지면 자국 통화 가치가 하락함. 환율 방어를 위해 달러를 팔아제낌.<br>
-                          그럼 시장에 달러가 풀려서 달러 가치는 떨어지고, 자국 통화 가치는 상승하게 됨.<br>
-                          근데 신흥국들이 자기 나라 돈 지키려고 미국 국채를 팔아치우니까, 미국 입장에선 채권 사줄 사람이 줄어들어서 금리가 올라가는 것.
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-
-            <div id="rate-bok" style="margin-top:28px;">
-              <div class="sh editable">한국의 상황은?</div>
-              <p class="sec-body" style="margin-bottom:14px;">작년엔 성장·물가(인하 신호) vs 부동산·환율(인상 신호)이 충돌했다. 올해는 4가지가 모두 같은 방향을 가리킨다.</p>
-              <div style="margin-bottom:18px;">
-                <img src="https://raw.githubusercontent.com/na47288/claude/main/images/k-dot-plot.png" alt="금통위원의 6개월 후 조건부 기준금리 전망 (K 점도표)" style="width:100%; border-radius:10px; border:1px solid var(--border);">
-              </div>
-
-              <div class="tbl-wrap">
-                <table class="tbl">
-                  <thead><tr><th>지표</th><th>현황</th><th>금리 방향</th></tr></thead>
-                  <tbody>
-                    <tr><td class="lbl">물가</td><td class="val">2.7% — 목표치 2% 초과</td><td class="badge badge-up">인상</td></tr>
-                    <tr><td class="lbl">성장률</td><td class="val">2.6% — 양호한 수준</td><td class="badge badge-up">인상</td></tr>
-                    <tr><td class="lbl">부동산</td><td class="val">불안한 조짐 지속</td><td class="badge badge-up">인상</td></tr>
-                    <tr><td class="lbl">환율</td><td class="val">1,500원대 — 원화 약세</td><td class="badge badge-up">인상</td></tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="hl editable"><strong>시장 컨센서스</strong> — 올해 2회 인상, 최종 기준금리 3.5% 예상. 내년 추가 1~2회 인상 가능성도 열려 있음.</div>
-            </div>
-
-            <div style="margin-top:28px;">
-              <div class="sh editable">미국의 상황은?</div>
-              <p class="sec-body" style="margin-bottom:14px;">새로 취임한 케빈 워시 연준의장. 트럼프 행정부, 시장, 연준 간의 관계에서 딜레마에 빠져있다</p>
-              <div class="stats" style="grid-template-columns:1fr 1fr 1fr;">
-                <div class="stat-box">
-                  <div style="font-size:11px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--text-3); margin-bottom:8px;">트럼프 행정부</div>
-                  <div style="font-size:13.5px; color:var(--text-2); line-height:1.6;">완화적 통화정책 요구. "금리 낮춰라" 압박.</div>
-                </div>
-                <div class="stat-box">
-                  <div style="font-size:11px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--text-3); margin-bottom:8px;">금융시장</div>
-                  <div style="font-size:13.5px; color:var(--text-2); line-height:1.6;">방향 못 잡고 갈팡질팡. 변동성 확대.</div>
-                </div>
-                <div class="stat-box">
-                  <div style="font-size:11px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--text-3); margin-bottom:8px;">연준 내부</div>
-                  <div style="font-size:13.5px; color:var(--text-2); line-height:1.6;">인플레 고착화 막아야 한다 — 의견 분열.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ── 고환율 ── -->
-          <div class="sec" id="fx">
-            <span class="sec-label">Part 3</span>
-            <h2 class="sec-title editable">고환율 — 왜 환율이 높은가</h2>
-            <p class="sec-body">환율 1500원대의 뉴노멀 시대. 왜 이렇게 높은 것인가?</p>
-            <div style="margin-bottom:28px;">
-              <img src="https://raw.githubusercontent.com/na47288/claude/main/images/usd-krw.png" alt="USD/KRW 환율 차트" style="width:100%; border-radius:10px; border:1px solid var(--border);">
-            </div>
-
-            <div class="sh editable">원인 3가지</div>
-            <div class="tbl-wrap">
-              <table class="tbl">
-                <thead><tr><th>원인</th><th>설명</th></tr></thead>
-                <tbody>
-                  <tr>
-                    <td class="lbl">① 달러 강세</td>
-                    <td class="val">중동전쟁 이후 안전자산인 달러 수요↑. 미국 금리가 한국보다 높아 달러 매력 상대적으로 높음.</td>
-                  </tr>
-                  <tr>
-                    <td class="lbl">② 외국인 매도</td>
-                    <td class="val">한국 주식 폭등 → 포트폴리오 내 비중 초과 → 리밸런싱. "싫어서 파는 게 아니라 비중 조정 때문". 원화 팔고 달러 가져감 → 원화 공급↑ → 환율↑.</td>
-                  </tr>
-                  <tr>
-                    <td class="lbl">③ 한미 금리차</td>
-                    <td class="val">미국 3.5% vs 한국 2.5%. 금리 높은 달러로 자금 이동. 환율 안정화하려면 한국 금리도 올려야 한다.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="sh editable">영향</div>
-            <div class="tbl-wrap">
-              <table class="tbl">
-                <thead><tr><th>대상</th><th>영향</th><th>판단</th></tr></thead>
-                <tbody>
-                  <tr><td class="lbl">수입 물가</td><td class="val">에너지·원자재 수입 비용↑ → 고물가 재자극 (악순환)</td><td class="badge badge-up">부정적</td></tr>
-                  <tr><td class="lbl">수출기업</td><td class="val">달러 수입액 → 원화로 환산 시 더 많이 받음</td><td class="badge badge-dn">긍정적</td></tr>
-                  <tr><td class="lbl">해외여행/유학</td><td class="val">환전 비용 부담↑ 1,500원대 유지</td><td class="badge badge-up">부정적</td></tr>
-                  <tr><td class="lbl">한국은행</td><td class="val">환율 방어 위해 금리 올려야 하는 압박↑ (내수와 충돌)</td><td class="badge badge-neutral">딜레마</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- ── 연결고리 ── -->
-          <div class="sec" id="link">
-            <span class="sec-label">연결고리</span>
-            <h2 class="sec-title editable">3고의 악순환 구조</h2>
-            <p class="sec-body">세 가지는 서로 연결되어 악순환을 만든다.</p>
-
-            <div class="flow-wrap">
-              <div class="flow">
-                <div class="flow-box">중동전쟁<br><span style="font-size:10px;color:var(--text-3)">발화점</span></div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-box">유가↑<br><span style="font-size:10px;color:var(--text-3)">$60→$90</span></div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-box">고물가<br><span style="font-size:10px;color:var(--text-3)">5년+ 지속</span></div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-box">금리 인상 압박<br><span style="font-size:10px;color:var(--text-3)">긴축</span></div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-box">고금리<br><span style="font-size:10px;color:var(--text-3)">4.5%</span></div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-box">달러 강세<br><span style="font-size:10px;color:var(--text-3)">안전자산</span></div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-box">고환율<br><span style="font-size:10px;color:var(--text-3)">1,500원</span></div>
-                <div class="flow-arrow">→</div>
-                <div class="flow-box">수입물가↑<br><span style="font-size:10px;color:var(--text-3)">재자극</span></div>
-              </div>
-            </div>
-            <div style="text-align:right; font-size:12px; color:var(--text-3); margin-top:6px; padding-right:4px;">마지막 단계가 다시 고물가로 연결 → 악순환</div>
-          </div>
-
-          <!-- ── 해결책 ── -->
-          <div class="sec" id="solution">
-            <span class="sec-label">해결책</span>
-            <h2 class="sec-title editable">3고 시대 탈출 방법</h2>
-            <p class="sec-body">단기 처방과 장기 구조 개선 두 가지가 동시에 필요하다.</p>
-
-            <div class="card">
-              <div class="card-title editable">종전 기대감 유지</div>
-              <div class="card-body editable">전쟁이 실제로 끝나지 않아도 "곧 끝날 것 같다"는 분위기만으로 유가·물가 심리 안정 효과. 실제 행동 없이도 기대만으로 물가를 잡는 카드.</div>
-            </div>
-
-            <div class="card">
-              <div class="card-title editable">미중 무역 갈등 해소 → 물가 안정</div>
-              <div class="card-body editable">트럼프 행정부는 중국산 수입품에 50% 관세를 매겼고, 이게 미국 물가를 끌어올린 주요 원인 중 하나.<br><br>
-              현재 미중 무역 갈등 해소되면서 관세를 낮추는 등 미중 정상회담·G2 이벤트에서 추가 합의가 나오면 물가는 꺾일 것.<br><br>
-              이미 다른 국가의 커피·코코아·파스타 등 서민 생필품 관세는 낮추는 중.</div>
-            </div>
-
-            <div class="card">
-              <div class="card-title editable">AI 생산성 혁명 — 장기 해법</div>
-              <div class="card-body editable">
-                <div style="margin-bottom:12px;">
-                  <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-3); margin-bottom:6px;">과거</div>
-                  경제가 성장하면 → 수요가 늘고 → 물가 상승
-                </div>
-                <div style="margin-bottom:12px;">
-                  <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-3); margin-bottom:6px;">AI 생산성 혁명</div>
-                  사람 10명이 하던 일을 AI 1개가 함 → 원가↓ (인건비↓)<br>
-                  더 빠르게, 더 많이 만들 수 있음 → 공급↑<br>
-                  성장은 하는데 물가는 안 오름 → <strong>물가 상승 없는 성장</strong>
-                </div>
-                <div style="margin-bottom:12px;">
-                  <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-3); margin-bottom:6px;">장기적으로..</div>
-                  물가가 안정되면 → 중앙은행이 금리 올릴 이유가 없어짐 → 금리↓<br>
-                  금리가 내려가면 → 미국이 국채에 줘야 할 이자 부담↓<br>
-                  이자가 줄면 → 엄청난 미국 국가부채가 서서히 희석됨
-                </div>
-                <div>
-                  <div style="font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-3); margin-bottom:6px;">단기적으로..</div>
-                  단기엔 AI 설비투자가 오히려 자금 흡수<br>
-                  남아도는 돈으로 채권 사던 빅테크 기업들이 AI 설비투자로 전향<br>
-                  → 수요자는 줄어들어 가격이 떨어짐 → 싼 가격으로 후킹이 안되니 금리 계속 올리면 꼬드김 → 금리 인상
-                </div>
-              </div>
-            </div>
-
-            <div class="hl editable" style="margin-top:24px;">
-              <strong>핵심 한 줄 요약</strong><br>
-              전쟁이 끝나도 인플레이션과 고금리는 쉽게 안 꺾인다. 관건은 AI가 물가 없는 성장을 실현할 수 있느냐다.
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ════════════════════════════════
-           PAGE: 260611 반도체/전력
-      ════════════════════════════════ -->
-      <div class="page" id="page-semi">
-        <div class="article-wrap">
-          <div class="article-header">
-            <div class="article-chip"><span class="chip-dot"></span>경제잡지 · 2026년 6월</div>
-            <h1 class="article-title">반도체 8대 공정 핵심 마스터<br>/ 대전력의 시대는 온다</h1>
-            <p class="article-sub">반도체가 어떻게 만들어지는지 이해하는 것은 현대 경제를 이해하는 출발점이다.</p>
-          </div>
-          <div class="hl editable">이 페이지 내용은 준비 중입니다. 반도체 8대 공정과 전력 수요 폭발에 관한 내용을 추가해 나가겠습니다.</div>
-        </div>
-      </div>
-
-      <!-- ════════════════════════════════
-           PAGE: Empty
-      ════════════════════════════════ -->
-      <div class="page" id="page-empty">
-        <div class="article-wrap">
-          <div class="empty">
-            <div class="empty-ico">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="1.5">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-1-4h2v2h-2zm0-10h2v8h-2z"/>
-              </svg>
-            </div>
-            <div class="empty-t">아직 내용이 없습니다</div>
-            <div class="empty-d">이 섹션의 아이템을 함께 추가해 나가요.</div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /content -->
-  </div><!-- /main -->
-</div><!-- /layout -->
+</div>
 
 <script>
 let sidebarOpen = false;
 
-
 function toggleSidebar() {
   sidebarOpen = !sidebarOpen;
   document.getElementById('sidebar').classList.toggle('collapsed', !sidebarOpen);
-  document.querySelector('.main').classList.toggle('sidebar-open', sidebarOpen);
+  document.getElementById('main').classList.toggle('sidebar-open', sidebarOpen);
 }
-
-// 초기 상태: 사이드바 닫힘
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('sidebar').classList.add('collapsed');
-  document.querySelector('.main').classList.remove('sidebar-open');
-});
 
 function toggleSec(name) {
   document.getElementById('sec-' + name).classList.toggle('open');
 }
 
+function toggleGroup(name) {
+  document.getElementById('grp-' + name).classList.toggle('open');
+}
+
 const pages = {
-  macro1: { pageId:'page-macro1', navId:'ni-macro1', bc:['거시경제','202606 거시경제현황'] },
-  semi:   { pageId:'page-semi',   navId:'ni-semi',   bc:['경제잡지','260611 반도체/전력'] },
-  empty:  { pageId:'page-empty',  navId:null,         bc:['데일리 경제뉴스',''] },
+  macro1:       { file: 'articles/macro1.html',       navId: 'ni-macro1',      navType: 'item', bc: ['거시경제', '202606 거시경제현황'] },
+  'semi-sobu':  { file: 'articles/semi-sobu.html',    navId: 'ni-semi-sobu',   navType: 'sub',  bc: ['경제잡지 · 반도체/전력', '500조 호황 — 소부장 현실'] },
+  'semi-siltron':{ file: 'articles/semi-siltron.html', navId: 'ni-semi-siltron', navType: 'sub', bc: ['경제잡지 · 반도체/전력', 'SK실트론 5조 몸값'] },
+  empty:        { file: null, navId: null, navType: null, bc: ['데일리 경제뉴스', ''] },
 };
 
-function showPage(name) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+async function showPage(name) {
+  // nav 활성화 초기화
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  const cfg = pages[name]; if (!cfg) return;
-  document.getElementById(cfg.pageId).classList.add('active');
-  if (cfg.navId) document.getElementById(cfg.navId)?.classList.add('active');
+  document.querySelectorAll('.nav-sub-item').forEach(n => n.classList.remove('active'));
+
+  const cfg = pages[name];
+  if (!cfg) return;
+
+  // nav 활성화
+  if (cfg.navId) {
+    const el = document.getElementById(cfg.navId);
+    if (el) el.classList.add('active');
+  }
+
+  // 브레드크럼 업데이트
   const bc = document.getElementById('bc');
   bc.innerHTML = cfg.bc[1]
     ? `<span class="bc-item">${cfg.bc[0]}</span><span class="bc-sep">/</span><span class="bc-item cur">${cfg.bc[1]}</span>`
     : `<span class="bc-item cur">${cfg.bc[0]}</span>`;
-  document.getElementById('content').scrollTo({top:0, behavior:'smooth'});
+
+  const content = document.getElementById('content');
+  content.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // 빈 페이지
+  if (!cfg.file) {
+    content.innerHTML = `<div class="article-wrap"><div class="empty"><div class="empty-t">아직 내용이 없습니다</div><div class="empty-d">이 섹션의 아이템을 함께 추가해 나가요.</div></div></div>`;
+    return;
+  }
+
+  // 아티클 파일 불러오기
+  content.innerHTML = '<div class="loading">불러오는 중…</div>';
+  try {
+    const res = await fetch(cfg.file);
+    if (!res.ok) throw new Error('not found');
+    const html = await res.text();
+    content.innerHTML = html;
+  } catch (e) {
+    content.innerHTML = `<div class="article-wrap"><div class="empty"><div class="empty-t">불러오기 실패</div><div class="empty-d">파일을 찾을 수 없습니다.</div></div></div>`;
+  }
 }
 
-document.querySelectorAll('.toc-list a').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
-  });
-});
+// 첫 화면 로드
+showPage('macro1');
 </script>
 </body>
 </html>
