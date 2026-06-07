@@ -29,29 +29,42 @@
 
   <div class="sec">
     <span class="sec-label">Part 2</span>
-    <h2 class="sec-title">밀판 위에 올린다 — 기판(PCB/FC-BGA)</h2>
-    <p class="sec-body">안전하게 잘려 나간 개별 칩들은 IT 기기의 메인보드와 전기 신호를 주고받을 수 있도록 <strong>전용 기판(PCB) 위에 얹히는 과정</strong>을 거쳐요. 기판은 칩이 외부 세계와 통신하는 '무대'예요. 이 과정에서 어떤 기술(본딩)로 붙이느냐에 따라 패키징의 갈래가 나뉘어요.</p>
+    <h2 class="sec-title">받침대 위에 올린다 — 기판이란 무엇인가</h2>
+    <p class="sec-body">칩을 잘라냈다고 끝이 아니에요. 이 작은 칩 조각을 스마트폰이나 컴퓨터에 그냥 꽂을 수는 없어요. 너무 작고 약해서 바로 연결하면 망가지거든요.</p>
 
     <div class="card">
-      <div class="card-title">💡 와이어 본딩 vs 플립칩 — 어떻게 다른가요?</div>
+      <div class="card-title">💡 기판(PCB)이 뭐예요? — 케이크 받침대 비유</div>
       <div class="card-body">
-        <p style="margin-bottom:10px;"><strong>① 와이어 본딩 방식</strong> — 칩이 하늘을 바라보게 똑바로 얹은 뒤, 금속 와이어로 칩과 기판을 연결하는 전통적인 방식이에요. 실로 다리를 놓는 것처럼요. 비용이 저렴하지만 와이어가 길수록 신호가 느려지는 단점이 있어요.</p>
-        <p><strong>② 플립칩(Flip Chip) 방식</strong> — 반대로 칩을 뒤집어 땅을 바라보게 꽂는 초고속형 방식이에요. 와이어 선 없이 칩의 전극을 기판에 직접 맞닿게 연결하는 일종의 엘리베이터 구조예요. 연결 다리가 없는 대신 기판 바닥에 전기를 통하게 하는 구슬인 <strong>'솔더볼'</strong>을 촘촘히 박아야 해요. 이 구슬을 배열했다고 해 <strong>BGA 기판(FC-BGA)</strong>이라 불러요.</p>
+        <p style="margin-bottom:10px;">케이크를 손으로 들고 다니면 망가지잖아요. 그래서 케이크 아래 <strong>종이 받침대</strong>를 깔아요.</p>
+        <p>기판이 바로 그 역할이에요. 칩(케이크)을 안전하게 받쳐주고, 외부 기기와 전기 신호도 주고받게 해주는 <strong>칩 전용 받침판</strong>이에요. 이걸 PCB(기판)이라고 해요.</p>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-title">FC-BGA 기판 — 엔비디아 AI 칩의 필수 무대</div>
+      <div class="card-title">💡 칩을 기판에 어떻게 붙이나요? — 두 가지 방법</div>
       <div class="card-body">
-        <p style="margin-bottom:10px;">엔비디아 GPU 같은 AI 연산 장치와 초고속 메모리를 한데 묶어 안전하게 떠받치려면 이 최고급 FC-BGA 기판이 필수예요. AI 반도체 수요 폭증으로 FC-BGA 기판은 소부장(소재·부품·장비) 업계 주가 급등의 주역으로 떠올랐어요.</p>
-        <p style="margin-bottom:10px;">고사양 FC-BGA 기판 시장에서는 <strong>글로벌 시장점유율 70% 이상</strong>을 선점한 일본의 <strong>이비덴</strong>과 <strong>신코덴키</strong>에 맞서 <strong>삼성전기</strong>가 대규모 투자를 단행하며 세계 1위를 노리고 있어요.</p>
-        <p>국내 FC-BGA 기판 업체 중 매출 비중이 가장 높은 기업으로는 <strong>대덕전자</strong>가 있으며, <strong>LG이노텍</strong>도 이 기판 중심의 체질 전환이 진행 중이에요. 기판 검사 장비사인 <strong>기가비스</strong>와 기판 바닥의 구슬(솔더볼)을 만드는 <strong>덕산하이메탈</strong>도 관련 생태계 기업이에요.</p>
+        <p style="margin-bottom:10px;"><strong>① 와이어 본딩 — "실로 다리 놓기"</strong><br>
+        칩을 기판 위에 똑바로 올린 뒤, 아주 가는 금속 실(와이어)로 칩과 기판을 연결해요. 강 양쪽에 밧줄 다리를 놓는 것처럼요. 방법은 단순하지만, 실이 길수록 신호가 느려진다는 단점이 있어요.</p>
+        <p><strong>② 플립칩(Flip Chip) — "칩을 뒤집어 꽂기"</strong><br>
+        칩을 <strong>거꾸로 뒤집어서</strong> 기판에 바로 맞닿게 꽂아요. 실 없이 칩 바닥에 작은 구슬(솔더볼)들을 촘촘히 박아서 기판과 직접 연결해요. 엘리베이터처럼 바로 연결되니까 훨씬 빠르고, AI 칩처럼 고성능이 필요한 곳에 써요. 이 방식으로 만든 고급 기판을 <strong>FC-BGA 기판</strong>이라고 불러요.</p>
       </div>
     </div>
 
     <div class="card">
-      <div class="card-title">와이어 본딩 소재 — 엠케이전자</div>
-      <div class="card-body">와이어 본딩에서 뼈대 역할을 하는 금속판(리드 프레임)은 대만(CWTC, SDI), 일본(신코덴키, 히타치), 한국(해성DS) 등 동아시아 3국 업체들이 과점 구조를 형성하고 있어요. 접합 소재인 본딩 와이어 시장에서는 <strong>한국의 엠케이전자</strong>를 비롯해 독일·일본계 총 4개사가 주도하고 있어요.</div>
+      <div class="card-title">FC-BGA 기판 — 엔비디아 AI 칩의 받침대</div>
+      <div class="card-body">
+        <p style="margin-bottom:10px;">엔비디아 GPU 같은 AI 칩은 워낙 고성능이라 일반 기판으론 버티지 못해요. 신호가 빠르게 오가야 하고 열도 잘 견뎌야 해서 <strong>FC-BGA라는 최고급 기판</strong>이 필요해요. AI 반도체 수요가 폭증하면서 이 기판을 만드는 기업들의 주가가 함께 뛰었어요.</p>
+        <p style="margin-bottom:10px;">이 기판 시장은 일본의 <strong>이비덴·신코덴키</strong>가 전 세계 70% 이상을 장악하고 있어요. 여기에 맞서 <strong>삼성전기</strong>가 대규모 투자로 세계 1위를 노리고, 국내에선 <strong>대덕전자·LG이노텍</strong>도 이 기판 중심으로 체질을 바꾸고 있어요.</p>
+        <p>기판이 잘 만들어졌는지 검사하는 장비 회사 <strong>기가비스</strong>, 기판 바닥에 박는 구슬(솔더볼)을 만드는 <strong>덕산하이메탈</strong>도 이 생태계 안에 있어요.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">와이어 본딩 소재 — 해성DS · 엠케이전자</div>
+      <div class="card-body">
+        <p style="margin-bottom:10px;">와이어 본딩 방식에서 기판의 뼈대 역할을 하는 금속판을 <strong>리드 프레임</strong>이라고 해요. 칩을 받쳐주는 금속 틀이에요. 대만(CWTC, SDI), 일본(신코덴키, 히타치), 한국(해성DS) 등이 이 시장을 나눠 가지고 있어요.</p>
+        <p>칩과 기판을 잇는 <strong>본딩 와이어(연결 실)</strong> 시장에서는 한국의 <strong>엠케이전자</strong>를 비롯해 독일·일본계 총 4개사가 주도하고 있어요.</p>
+      </div>
     </div>
   </div>
 
