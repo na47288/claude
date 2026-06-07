@@ -43,10 +43,58 @@
     <div class="card">
       <div class="card-title">💡 칩을 기판에 어떻게 붙이나요? — 두 가지 방법</div>
       <div class="card-body">
+
+        <!-- 다이어그램 -->
+        <div style="display:flex; gap:12px; margin-bottom:18px;">
+
+          <!-- 와이어 방식 -->
+          <div style="flex:1; background:#1a1a2e; border-radius:10px; padding:14px 10px 10px; text-align:center;">
+            <div style="font-size:11px; color:#aaa; margin-bottom:8px; display:flex; justify-content:space-around;">
+              <span>기판</span><span>전선</span><span>칩</span>
+            </div>
+            <div style="position:relative; height:54px; background:#111827; border-radius:6px; margin-bottom:8px; overflow:hidden;">
+              <!-- 기판(초록 바닥) -->
+              <div style="position:absolute; bottom:0; left:0; right:0; height:10px; background:#2d6a4f;"></div>
+              <!-- 칩(노란 블록) -->
+              <div style="position:absolute; bottom:10px; left:50%; transform:translateX(-50%); width:44%; height:22px; background:#e9c46a; border-radius:2px;"></div>
+              <!-- 왼쪽 와이어 아치 -->
+              <svg style="position:absolute;top:0;left:0;width:100%;height:100%;" viewBox="0 0 120 54" preserveAspectRatio="none">
+                <path d="M18,44 Q28,10 44,32" stroke="#e0e0e0" stroke-width="1.5" fill="none"/>
+                <path d="M102,44 Q92,10 76,32" stroke="#e0e0e0" stroke-width="1.5" fill="none"/>
+              </svg>
+            </div>
+            <div style="font-size:12px; font-weight:700; color:#e05c5c;">와이어 방식</div>
+          </div>
+
+          <!-- 플립칩 방식 -->
+          <div style="flex:1; background:#1a1a2e; border-radius:10px; padding:14px 10px 10px; text-align:center;">
+            <div style="font-size:11px; color:#aaa; margin-bottom:8px; display:flex; justify-content:space-around;">
+              <span>범프</span><span>칩</span><span>기판</span>
+            </div>
+            <div style="position:relative; height:54px; background:#111827; border-radius:6px; margin-bottom:8px; overflow:hidden;">
+              <!-- 기판(초록 바닥) -->
+              <div style="position:absolute; bottom:0; left:0; right:0; height:10px; background:#2d6a4f;"></div>
+              <!-- 칩(노란 블록, 뒤집혀서 위에) -->
+              <div style="position:absolute; top:6px; left:50%; transform:translateX(-50%); width:60%; height:18px; background:#e9c46a; border-radius:2px;"></div>
+              <!-- 파란 접착층 -->
+              <div style="position:absolute; bottom:10px; left:50%; transform:translateX(-50%); width:60%; height:10px; background:#4895ef; border-radius:1px;"></div>
+              <!-- 솔더볼(구슬들) -->
+              <div style="position:absolute; bottom:14px; left:50%; transform:translateX(-50%); display:flex; gap:3px;">
+                <div style="width:8px;height:8px;background:#bbb;border-radius:50%;"></div>
+                <div style="width:8px;height:8px;background:#bbb;border-radius:50%;"></div>
+                <div style="width:8px;height:8px;background:#bbb;border-radius:50%;"></div>
+                <div style="width:8px;height:8px;background:#bbb;border-radius:50%;"></div>
+                <div style="width:8px;height:8px;background:#bbb;border-radius:50%;"></div>
+              </div>
+            </div>
+            <div style="font-size:12px; font-weight:700; color:#e05c5c;">플립 칩 방식</div>
+          </div>
+        </div>
+
         <p style="margin-bottom:10px;"><strong>① 와이어 본딩 — "실로 다리 놓기"</strong><br>
         칩을 기판 위에 똑바로 올린 뒤, 아주 가는 금속 실(와이어)로 칩과 기판을 연결해요. 강 양쪽에 밧줄 다리를 놓는 것처럼요. 방법은 단순하지만, 실이 길수록 신호가 느려진다는 단점이 있어요.</p>
         <p><strong>② 플립칩(Flip Chip) — "칩을 뒤집어 꽂기"</strong><br>
-        칩을 <strong>거꾸로 뒤집어서</strong> 기판에 바로 맞닿게 꽂아요. 실 없이 칩 바닥에 작은 구슬(솔더볼)들을 촘촘히 박아서 기판과 직접 연결해요. 엘리베이터처럼 바로 연결되니까 훨씬 빠르고, AI 칩처럼 고성능이 필요한 곳에 써요. 이 방식으로 만든 고급 기판을 <strong>FC-BGA 기판</strong>이라고 불러요.</p>
+        칩을 <strong>거꾸로 뒤집어서</strong> 기판에 바로 맞닿게 꽂아요. 실 없이 칩 바닥에 작은 구슬(솔더볼 = 범프)들을 촘촘히 박아서 기판과 직접 연결해요. 엘리베이터처럼 바로 연결되니까 훨씬 빠르고, AI 칩처럼 고성능이 필요한 곳에 써요. 이 방식으로 만든 고급 기판을 <strong>FC-BGA 기판</strong>이라고 불러요.</p>
       </div>
     </div>
 
