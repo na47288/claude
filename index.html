@@ -258,16 +258,65 @@ html, body {
               <svg class="nav-group-chevron" viewBox="0 0 16 16" fill="currentColor"><path d="M6 3l5 5-5 5V3z"/></svg>
             </button>
             <div class="nav-sub-children">
+
+              <!-- 한경비즈니스 -->
+              <div style="padding:6px 10px 3px; font-size:10px; font-weight:700; letter-spacing:0.06em; color:var(--text-3); text-transform:uppercase;">한경비즈니스 1591호</div>
               <button class="nav-sub-item" id="ni-semi-sobu" onclick="showPage('semi-sobu')">
-                <span class="nav-sub-dot"></span>
-                <span>500조 호황 — 소부장 현실</span>
+                <span class="nav-sub-dot"></span><span>500조 호황 — 소부장 현실</span>
                 <span class="nav-item-date">06.03</span>
               </button>
               <button class="nav-sub-item" id="ni-semi-siltron" onclick="showPage('semi-siltron')">
-                <span class="nav-sub-dot"></span>
-                <span>SK실트론 5조 몸값</span>
+                <span class="nav-sub-dot"></span><span>SK실트론 5조 몸값</span>
                 <span class="nav-item-date">06.03</span>
               </button>
+              <button class="nav-sub-item" id="ni-semi-oxidation" onclick="showPage('semi-oxidation')">
+                <span class="nav-sub-dot"></span><span>산화공정 — 웨이퍼 보호막</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+              <button class="nav-sub-item" id="ni-semi-hbm" onclick="showPage('semi-hbm')">
+                <span class="nav-sub-dot"></span><span>HBM의 비결</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+              <button class="nav-sub-item" id="ni-semi-etch" onclick="showPage('semi-etch')">
+                <span class="nav-sub-dot"></span><span>식각공정 — K소부장 도전</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+              <button class="nav-sub-item" id="ni-semi-deposition" onclick="showPage('semi-deposition')">
+                <span class="nav-sub-dot"></span><span>증착공정 — 원자층의 반란</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+              <button class="nav-sub-item" id="ni-semi-metal" onclick="showPage('semi-metal')">
+                <span class="nav-sub-dot"></span><span>금속배선 — 반도체 전기 혈관</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+              <button class="nav-sub-item" id="ni-semi-test" onclick="showPage('semi-test')">
+                <span class="nav-sub-dot"></span><span>테스트공정 — 수율 전쟁</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+              <button class="nav-sub-item" id="ni-semi-packaging" onclick="showPage('semi-packaging')">
+                <span class="nav-sub-dot"></span><span>패키징 — AI 패권과 K소부장</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+              <button class="nav-sub-item" id="ni-semi-chey" onclick="showPage('semi-chey')">
+                <span class="nav-sub-dot"></span><span>최태원의 반도체 전략</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+
+              <!-- 매경이코노미 -->
+              <div style="padding:10px 10px 3px; font-size:10px; font-weight:700; letter-spacing:0.06em; color:var(--text-3); text-transform:uppercase;">매경이코노미 2361호</div>
+              <button class="nav-sub-item" id="ni-power-age" onclick="showPage('power-age')">
+                <span class="nav-sub-dot"></span><span>AI 에너지 블랙홀</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+              <button class="nav-sub-item" id="ni-power-kgrid" onclick="showPage('power-kgrid')">
+                <span class="nav-sub-dot"></span><span>K전력기기 수혜와 옥석 가리기</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+              <button class="nav-sub-item" id="ni-power-package" onclick="showPage('power-package')">
+                <span class="nav-sub-dot"></span><span>K전력 승부처: 전력망 패키지</span>
+                <span class="nav-item-date">06.03</span>
+              </button>
+
             </div>
           </div>
 
@@ -319,10 +368,21 @@ function toggleGroup(name) {
 }
 
 const pages = {
-  macro1:       { file: 'articles/macro1.html',       navId: 'ni-macro1',      navType: 'item', bc: ['거시경제', '202606 거시경제현황'] },
-  'semi-sobu':  { file: 'articles/semi-sobu.html',    navId: 'ni-semi-sobu',   navType: 'sub',  bc: ['경제잡지 · 반도체/전력', '500조 호황 — 소부장 현실'] },
-  'semi-siltron':{ file: 'articles/semi-siltron.html', navId: 'ni-semi-siltron', navType: 'sub', bc: ['경제잡지 · 반도체/전력', 'SK실트론 5조 몸값'] },
-  empty:        { file: null, navId: null, navType: null, bc: ['데일리 경제뉴스', ''] },
+  macro1:            { file: 'articles/macro1.html',          navId: 'ni-macro1',          navType: 'item', bc: ['거시경제', '202606 거시경제현황'] },
+  'semi-sobu':       { file: 'articles/semi-sobu.html',       navId: 'ni-semi-sobu',       navType: 'sub',  bc: ['경제잡지 · 반도체/전력', '500조 호황 — 소부장 현실'] },
+  'semi-siltron':    { file: 'articles/semi-siltron.html',    navId: 'ni-semi-siltron',    navType: 'sub',  bc: ['경제잡지 · 반도체/전력', 'SK실트론 5조 몸값'] },
+  'semi-oxidation':  { file: 'articles/semi-oxidation.html',  navId: 'ni-semi-oxidation',  navType: 'sub',  bc: ['경제잡지 · 반도체/전력', '산화공정 — 웨이퍼 보호막'] },
+  'semi-hbm':        { file: 'articles/semi-hbm.html',        navId: 'ni-semi-hbm',        navType: 'sub',  bc: ['경제잡지 · 반도체/전력', 'HBM의 비결'] },
+  'semi-etch':       { file: 'articles/semi-etch.html',       navId: 'ni-semi-etch',       navType: 'sub',  bc: ['경제잡지 · 반도체/전력', '식각공정 — K소부장 도전'] },
+  'semi-deposition': { file: 'articles/semi-deposition.html', navId: 'ni-semi-deposition', navType: 'sub',  bc: ['경제잡지 · 반도체/전력', '증착공정 — 원자층의 반란'] },
+  'semi-metal':      { file: 'articles/semi-metal.html',      navId: 'ni-semi-metal',      navType: 'sub',  bc: ['경제잡지 · 반도체/전력', '금속배선 — 반도체 전기 혈관'] },
+  'semi-test':       { file: 'articles/semi-test.html',       navId: 'ni-semi-test',       navType: 'sub',  bc: ['경제잡지 · 반도체/전력', '테스트공정 — 수율 전쟁'] },
+  'semi-packaging':  { file: 'articles/semi-packaging.html',  navId: 'ni-semi-packaging',  navType: 'sub',  bc: ['경제잡지 · 반도체/전력', '패키징 — AI 패권과 K소부장'] },
+  'semi-chey':       { file: 'articles/semi-chey.html',       navId: 'ni-semi-chey',       navType: 'sub',  bc: ['경제잡지 · 반도체/전력', '최태원의 반도체 전략'] },
+  'power-age':       { file: 'articles/power-age.html',       navId: 'ni-power-age',       navType: 'sub',  bc: ['경제잡지 · 반도체/전력', 'AI 에너지 블랙홀'] },
+  'power-kgrid':     { file: 'articles/power-kgrid.html',     navId: 'ni-power-kgrid',     navType: 'sub',  bc: ['경제잡지 · 반도체/전력', 'K전력기기 수혜와 옥석 가리기'] },
+  'power-package':   { file: 'articles/power-package.html',   navId: 'ni-power-package',   navType: 'sub',  bc: ['경제잡지 · 반도체/전력', 'K전력 승부처: 전력망 패키지'] },
+  empty:             { file: null, navId: null, navType: null, bc: ['데일리 경제뉴스', ''] },
 };
 
 async function showPage(name) {
